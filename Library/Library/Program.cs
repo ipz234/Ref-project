@@ -32,7 +32,7 @@ namespace BadCodeLibrary
         {
             for (int i = 0; i < books.Count; i++)
             {
-                Console.WriteLine("Title: " + books[i].title + ", Author: " + books[i].author);
+                Console.WriteLine(FormatBook(books[i]));
             }
         }
 
@@ -40,13 +40,18 @@ namespace BadCodeLibrary
         {
             for (int i = 0; i < books.Count; i++)
             {
-                if (books[i].title == t)
+                if (books[i].Title == t)
                 {
-                    Console.WriteLine("Found: " + books[i].title + " by " + books[i].author);
+                    Console.WriteLine("Found: " + FormatBook(books[i]));
                     return;
                 }
             }
             Console.WriteLine("Book not found");
+        }
+
+        private string FormatBook(Book book)
+        {
+            return $"Title: {book.Title}, Author: {book.Author}";
         }
     }
 
@@ -61,5 +66,4 @@ namespace BadCodeLibrary
             Author = author;
         }
     }
-
 }
