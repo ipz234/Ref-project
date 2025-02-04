@@ -52,13 +52,14 @@ namespace BadCodeLibrary
 
     class Book
     {
-        public string title;
-        public string author;
+        public string Title { get; private set; }
+        public string Author { get; private set; }
 
-        public Book(string t, string a)
+        public Book(string title, string author)
         {
-            title = t;
-            author = a;
+            Title = title;
+            Author = author;
         }
     }
+
 }
