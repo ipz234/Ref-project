@@ -30,19 +30,19 @@ namespace BadCodeLibrary
 
         public void ShowBooks()
         {
-            for (int i = 0; i < books.Count; i++)
+            foreach (var book in books)
             {
-                Console.WriteLine(FormatBook(books[i]));
+                Console.WriteLine(FormatBook(book));
             }
         }
 
-        public void FindBook(string t)
+        public void FindBook(string title)
         {
-            for (int i = 0; i < books.Count; i++)
+            foreach (var book in books)
             {
-                if (books[i].Title == t)
+                if (book.Title == title)
                 {
-                    Console.WriteLine("Found: " + FormatBook(books[i]));
+                    Console.WriteLine("Found: " + FormatBook(book));
                     return;
                 }
             }
